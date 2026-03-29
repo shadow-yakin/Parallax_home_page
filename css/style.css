@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: "Prompt", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.4;
+  transition: color .3s ease;
+}
+
+a:hover {
+  color: gold;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 60px 0;
+  z-index: 1;
+}
+
+.menu__list {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.top__layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@supports (animation-timeline: scroll()) {
+  .top {
+    height: 500vh;
+  }
+
+  .top__layer {
+    animation-timing-function: linear;
+    animation-timeline: scroll();
+    animation-range: 0 500vh;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes top__layer-5 {
+  to {
+    scale: 1.15;
+  }
+}
+
+.top__layer-5 {
+  animation-name: top__layer-5;
+}
+
+@keyframes top__layer-4 {
+  to {
+    scale: 1.25;
+  }
+}
+
+.top__layer-4 {
+  animation-name: top__layer-4;
+}
+
+@keyframes top__layer-3 {
+  to {
+    scale: 1.5;
+  }
+}
+
+.top__layer-3 {
+  animation-name: top__layer-3;
+}
+
+@keyframes top__layer-2 {
+  to {
+    scale: 2;
+  }
+}
+
+.top__layer-2 {
+  animation-name: top__layer-2;
+}
+
+@keyframes top__layer-1 {
+  to {
+    scale: 4;
+  }
+}
+
+.top__layer-1 {
+  animation-name: top__layer-1;
+}
+
+.top__text {
+  position: relative;
+  font-family: "Gravitas One", serif;
+  z-index: 1;
+  animation-name: text;
+  opacity: 0;
+  animation-timing-function: linear;
+  animation-timeline: scroll();
+  animation-range: 150vh 400vh;
+  animation-fill-mode: both;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 120px;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 24px;
+}
+
+@keyframes text {
+  to {
+    opacity: 1;
+  }
+}
+
+.arrows-box {
+  position: fixed;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: rgba(30, 30, 30. 0.7);
+  width: 60px;
+  height: 60px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  margin: 0 auto;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.arrows {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  margin: 23px auto 0;
+}
+
+.arrows::after,
+.arrows::before {
+  content: '';
+  position: absolute;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  height: 100%;
+  animation: arrow 3s linear infinite;
+}
+
+.arrows::after {
+  animation: arrow 3s linear infinite -1.5s;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    transform: translate(0, -10px) rotate(-45deg);
+  }
+
+  10%,
+  90% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(0, 0 rotate(-45deg));
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 10px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 1020px) {
+  .title {
+    font-size: 100px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .title {
+    font-size: 80px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 60px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 530px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .menu__list {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .title {
+    font-size: 40px;
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
